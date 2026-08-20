@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
-@import 'tw-animate-css';
-@plugin "@tailwindcss/typography";
-@custom-variant dark (&:is(.dark *));
+
 @theme inline {
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -45,6 +43,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
+
 :root {
   --background: 38 42% 94%;
   --foreground: 268 24% 18%;
@@ -89,6 +88,7 @@
   --sidebar-primary-border: hsl(var(--sidebar-primary));
   --sidebar-accent-border: hsl(var(--sidebar-accent));
 }
+
 [data-theme='orange'] { --primary: 23 72% 48%; --ring: 23 72% 48%; --accent: 45 76% 65%; }
 [data-theme='yellow'] { --primary: 38 77% 43%; --ring: 38 77% 43%; --accent: 83 39% 60%; }
 [data-theme='green'] { --primary: 146 42% 35%; --ring: 146 42% 35%; --accent: 35 63% 68%; }
@@ -107,6 +107,7 @@
 [data-font='space'] { --app-font-sans: 'Space Grotesk', sans-serif; }
 [data-font='literata'] { --app-font-serif: 'Playfair Display', Georgia, serif; --app-font-sans: 'Space Grotesk', sans-serif; }
 [data-font='classic'] { --app-font-sans: 'Manrope', sans-serif; --app-font-serif: Georgia, serif; }
+
 @layer base {
   * { @apply border-border; }
   html { background: hsl(var(--background)); }
@@ -114,6 +115,7 @@
   button, input, textarea, select { font: inherit; }
   button, a, input, textarea, select { outline-color: hsl(var(--ring)); }
 }
+
 @layer utilities {
   .font-display { font-family: var(--app-font-serif); }
   .font-mono-app { font-family: var(--app-font-mono); }
@@ -125,4 +127,5 @@
   .fade-up-delay-2 { animation-delay: .16s; }
   .fade-up-delay-3 { animation-delay: .24s; }
 }
+
 @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
